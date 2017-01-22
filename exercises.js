@@ -5,7 +5,12 @@
             - Add a property named `color` and set it the name of any color.
             - Add a property named `size` and set it to a number value between `0` and `20`.
             - Add a property named `contents` and set it to be an empty array.
- */
+ */var plainBox = {};
+ plainBox.color = "blue";
+ plainBox.size = 15;
+plainBox.contents = [];
+ console.log(plainBox);
+
 
 
 /*
@@ -22,6 +27,15 @@
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
  */
+ var stockCar = {
+    model: "Ford",
+    year: 2016,
+    automaticTransmission: false,
+    driver: null,
+    passengers: [],
+ };
+ console.log(stockCar);
+ console.log(stockCar.model);
 
 
 /*
@@ -36,7 +50,17 @@
         The function will return the first parameter.
 
         Finally, invoke your new function while passing in the `plainPerson` object and additional agrument values, then store the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just the value at `name`, and just the value at `age`.
- */
+ */ var plainPerson = {};
+
+ function buildPerson(person, nameString, age){
+    person.name = nameString;
+    person.age = age;
+    return person;
+}
+var completePerson = (buildPerson(plainPerson, "Kathy", 5));
+ console.log(completePerson);
+ console.log(completePerson.name);
+ console.log(completePerson.age);
 
 
 /*
@@ -61,7 +85,68 @@
             =====
             ...
  */
+var arrOfObjects = [
+{
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+];
+function printProcessedOrders(orders){
+    for (var i = 0 ; i<orders.length; i++){
+        console.log("=====");
+        console.log("id: " + orders[i].id);
+        console.log("purchase date: " + orders[i].date);
+        console.log("purchase total: " + orders[i].total);
+    }
+}
 
+printProcessedOrders(arrOfObjects); 
 
 /*
     # Addition with an object
@@ -73,6 +158,18 @@
 
         Go ahead and create some more objects and pass them to this function. Have fun with it.
 */
+var sumObj = {
+    a : 3,
+    b : 2,
+    result : undefined,
+};
+ 
+ function objectAddition(object){
+    object.result = object.a + object.b;
+    return object;
+ }
+ console.log(objectAddition(sumObj));
+ var sumObjResult = 5;
 
 
 /*
@@ -88,7 +185,11 @@
 
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
  */
-
+function printObj(obj){
+    var output = obj.a + " + " + obj.b + " = " + obj.result;
+    return output;
+}
+console.log(printObj(sumObj));
 
 /*
     # Putting stuff in `plainBox`
@@ -96,6 +197,20 @@
 
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
+function putInPlainBox(obj){
+    return obj;
+}
+for (var i = 0; i<10; i++){
+    var randomNumber = Math.floor((Math.random() * 10) + 1);
+    obj.contents.push(randomNumber);
+}
+return obj;
+}
+
+
+putInPlainBox(plainBox);
+console.log(plainBox);
+
 
 
 /*
